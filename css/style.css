@@ -1,0 +1,32 @@
+/*
+
+Colores
+Fondo: #1e1b50
+Letras: #c7f1ff
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.colorFondo {
+    background-color: #1e1b50 !important;
+}
+
+.formMargin {
+    margin: 15px;
+}
+
+body {
+    background-color: #1e1b50 !important;
+}
+
+main {
+    background-color: #1e1b50;
+}
+
+footer a {
+    text-decoration: none;
+}
