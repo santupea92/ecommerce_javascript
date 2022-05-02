@@ -8,12 +8,13 @@ let productoSeleccionado = prompt("¿Qué producto quiere comprar? (Escoja un N�
                                     "5- HITMAN GW800" + "\n" +
                                     "6- PELOPS H818" + "\n" +
                                     "7- RUBY 144165 HZ" + "\n" +
-                                    "8- TAILGATE GC702" + "\n");
+                                    "8- TAILGATE GC702" + "\n" + 
+                                    "9- Ver los PRECIOS de cada producto");
 
 let cantidadCuotas;
 let metodoDePago;
 
-// Productos & Precios
+// Clase de Productos / Método
 
 class Producto {
     constructor (nombre, precio, stock) {
@@ -76,70 +77,78 @@ class Producto {
     }
 }
 
-const COOLER = new Producto ("EFFECT X CPU COOLER CCW3000", 13000, 0);
-const FLICK = new Producto ("FLICK SERIES", 1600, 10);
-const GAIA = new Producto ("GAIA C211", 35000, 10);
-const JUPITER = new Producto ("JUPITER G809", 5000, 5);
-const HITMAN = new Producto ("HITMAN GW800", 6500, 0);
-const FELOPS = new Producto ("PELOPS H818", 8000, 10);
-const RUBY = new Producto ("RUBY 144165 HZ", 55000, 5);
-const TAILGATE = new Producto ("TAILGATE GC702", 14000, 0);
+const productos = [];
+productos.push(new Producto ("EFFECT X CPU COOLER CCW3000", 13000, 0)); // index 0
+productos.push(new Producto ("FLICK SERIES", 1600, 10)); // index 1
+productos.push(new Producto ("GAIA C211", 35000, 10)); // index 2
+productos.push(new Producto ("JUPITER G809", 5000, 5)); // index 3
+productos.push(new Producto ("HITMAN GW800", 6500, 0)); // index 4
+productos.push(new Producto ("PELOPS H818", 8000, 10)); // index 5
+productos.push(new Producto ("RUBY 144165 HZ", 55000, 5)); // index 6
+productos.push(new Producto ("TAILGATE GC702", 14000, 0)); // index 7
 
     switch (productoSeleccionado) {
         case "1":
-            productoSeleccionado = COOLER;
-            COOLER.seleccion();
-            COOLER.vender();
-            COOLER.metodoPago();
+            productoSeleccionado = productos[0];
+            productos[0].seleccion();
+            productos[0].vender();
+            productos[0].metodoPago();
             break;
 
         case "2":
-            productoSeleccionado = FLICK;
-            FLICK.seleccion();
-            FLICK.vender();
-            FLICK.metodoPago();
+            productoSeleccionado = productos[1];
+            productos[1].seleccion();
+            productos[1].vender();
+            productos[1].metodoPago();
             break;
             
         case "3":
-            productoSeleccionado = GAIA;
-            GAIA.seleccion();
-            GAIA.vender();
-            GAIA.metodoPago();
+            productoSeleccionado = productos[2];
+            productos[2].seleccion();
+            productos[2].vender();
+            productos[2].metodoPago();
             break;
 
         case "4":
-            productoSeleccionado = JUPITER;
-            JUPITER.seleccion();
-            JUPITER.vender();
-            JUPITER.metodoPago();
+            productoSeleccionado = productos[3];
+            productos[3].seleccion();
+            productos[3].vender();
+            productos[3].metodoPago();
             break;
 
         case "5":
-            productoSeleccionado = HITMAN;
-            HITMAN.seleccion();
-            HITMAN.vender();
-            HITMAN.metodoPago();
+            productoSeleccionado = productos[4];
+            productos[4].seleccion();
+            productos[4].vender();
+            productos[4].metodoPago();
             break;
 
         case "6":
-            productoSeleccionado = FELOPS;
-            FELOPS.seleccion();
-            FELOPS.vender();
-            FELOPS.metodoPago();
+            productoSeleccionado = productos[5];
+            productos[5].seleccion();
+            productos[5].vender();
+            productos[5].metodoPago();
             break;
 
         case "7":
-            productoSeleccionado = RUBY;
-            RUBY.seleccion();
-            RUBY.vender();
-            RUBY.metodoPago();
+            productoSeleccionado = productos[6];
+            productos[6].seleccion();
+            productos[6].vender();
+            productos[6].metodoPago();
             break;
 
         case "8":
-            productoSeleccionado = TAILGATE;
-            TAILGATE.seleccion();
-            TAILGATE.vender();
-            TAILGATE.metodoPago();
+            productoSeleccionado = productos[7];
+            productos[7].seleccion();
+            productos[7].vender();
+            productos[7].metodoPago();
+            break;
+
+        case "9":
+            for(const producto of productos) {
+                alert("Esta es la lista de Precios:" + "\n" + 
+                      producto.nombre + ": $" + producto.precio);
+            }
             break;
 
         default:
